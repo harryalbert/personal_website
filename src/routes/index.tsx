@@ -63,7 +63,7 @@ export default function Home() {
 				<h1 class="font-fatface text-3xl tracking-wide">Contact Me</h1>
 
 				<h2 class="text-sm">
-					Please feel free to reach out to me, even if its just to
+					Please feel free to reach out to me, even if it's just to
 					chat! My number is
 					<LinkOffsetText
 						smallMargin
