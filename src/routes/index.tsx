@@ -48,7 +48,7 @@ export default function Home() {
 			</div>
 
 			<div
-				class={`bg-indigo-50 m-2 px-10 py-10 grid ${
+				class={`bg-white m-2 px-10 py-10 grid ${
 					isMobile ? "grid-cols-1" : "grid-cols-2"
 				}`}
 			>
