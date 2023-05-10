@@ -4,6 +4,11 @@ import OffsetButton from "~/components/OffsetButton";
 import OffsetText from "~/components/TitleOffsetText";
 
 export default function Home() {
+	var isMobile = false;
+	if (typeof window !== "undefined") {
+		isMobile = window.innerWidth <= 640;
+	}
+
 	return (
 		<div class="font-mulish text-black">
 			<div class="bg-indigo-50 m-2 px-10 py-2 ">
@@ -42,7 +47,11 @@ export default function Home() {
 				</div>
 			</div>
 
-			<div class="m-2 px-10 py-10 grid grid-cols-2">
+			<div
+				class={`bg-indigo-50 m-2 px-10 py-10 grid ${
+					isMobile ? "grid-cols-1" : "grid-cols-2"
+				}`}
+			>
 				<h1 class="font-fatface text-3xl tracking-wide">
 					Languages & Technologies
 				</h1>
@@ -59,7 +68,11 @@ export default function Home() {
 				</h2>
 			</div>
 
-			<div class="bg-indigo-50 m-2 px-10 py-10 grid grid-cols-2">
+			<div
+				class={`bg-indigo-50 m-2 px-10 py-10 grid ${
+					isMobile ? "grid-cols-1" : "grid-cols-2"
+				}`}
+			>
 				<h1 class="font-fatface text-3xl tracking-wide">Contact Me</h1>
 
 				<h2 class="text-sm">
