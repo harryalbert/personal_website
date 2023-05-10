@@ -24,7 +24,7 @@ export default function Root() {
 	return (
 		<Html lang="en">
 			<Head>
-				<Title>SolidStart - With TailwindCSS</Title>
+				<Title>Harry Albert</Title>
 				<Meta charset="utf-8" />
 				<Meta
 					name="viewport"
