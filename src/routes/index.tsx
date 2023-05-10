@@ -19,7 +19,7 @@ export default function Home() {
 				</div>
 				<h1 class="font-fatface text-4xl tracking-wide">
 					Hi <OffsetText text={"I'm Harry,"} /> <br />
-					<OffsetText text={"Software Engineer"} /> & Student
+					Student & <OffsetText text={"Software Engineer"} />
 				</h1>
 
 				<h2 class="mt-10 w-3/5">

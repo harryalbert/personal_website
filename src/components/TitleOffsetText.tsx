@@ -8,10 +8,10 @@ interface Props {
 export default function OffsetText(props: Props): JSX.Element {
 	return (
 		<span class="relative inline-block">
-			<h1 class="relative z-20 font-fatface text-4xl tracking-wide">
+			<h1 class="relative text-4xl z-20 font-fatface tracking-wide transition-all duration-200 ease-in-out">
 				{props.text}
 			</h1>
-			<span class="bg-violet-400 absolute top-6 w-full h-2/5 z-10"></span>
+			<span class="bg-gradient-to-r from-violet-300 to-blue-300 absolute top-6 w-full h-2/5 z-10 transition-all duration-200 ease-in-out"></span>
 		</span>
 	);
 }
