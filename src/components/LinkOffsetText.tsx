@@ -4,11 +4,16 @@ import {JSX} from "solid-js";
 interface Props {
 	text: string;
 	link: string;
+	smallMargin?: boolean;
 }
 
 export default function LinkOffsetText(props: Props): JSX.Element {
 	return (
-		<span class="relative inline-block mr-5">
+		<span
+			class={`relative inline-block ${
+				props.smallMargin ? "m-1" : "mr-5"
+			}`}
+		>
 			<h1 class="relative z-20 font-mulish text-base tracking-wide">
 				<a href={props.link} target="_blank">
 					{props.text}

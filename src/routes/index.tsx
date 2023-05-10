@@ -42,12 +42,12 @@ export default function Home() {
 				</div>
 			</div>
 
-			<div class="m-2 px-10 py-2 grid grid-cols-2">
-				<h1 class="font-fatface text-3xl tracking-wide mt-10">
+			<div class="m-2 px-10 py-10 grid grid-cols-2">
+				<h1 class="font-fatface text-3xl tracking-wide">
 					Languages & Technologies
 				</h1>
 
-				<h2 class="mt-10 text-sm">
+				<h2 class="text-sm">
 					<MinorOffsetText text={"Languages: "} /> Javascript,
 					Typescript, HTML + CSS, Solidity, Python, C, Java, Hack/PHP,
 					Assembly
@@ -59,20 +59,23 @@ export default function Home() {
 				</h2>
 			</div>
 
-			<div class="bg-indigo-50 m-2 px-10 py-2 grid grid-cols-2">
-				<h1 class="font-fatface text-3xl tracking-wide mt-10">
-					Languages & Technologies
-				</h1>
+			<div class="bg-indigo-50 m-2 px-10 py-10 grid grid-cols-2">
+				<h1 class="font-fatface text-3xl tracking-wide">Contact Me</h1>
 
-				<h2 class="mt-10 text-sm">
-					<MinorOffsetText text={"Languages: "} /> Javascript,
-					Typescript, HTML + CSS, Solidity, Python, C, Java, Hack/PHP,
-					Assembly
-					<br />
-					<br />
-					<MinorOffsetText text={"Technologies: "} /> React, SolidJS,
-					Next.js, Tailwind, GraphQL, ChatGPT API, Relay, Web3, ERC
-					721, Hardhat, Express.js, Firebase, MongoDB Atlas, AWS
+				<h2 class="text-sm">
+					Please feel free to reach out to me, even if its just to
+					chat! My number is
+					<LinkOffsetText
+						smallMargin
+						text={"(413)770-6129"}
+						link={"tel:4137706129"}
+					/>
+					and my email is
+					<LinkOffsetText
+						smallMargin
+						text={"harryalbert364@gmail.com"}
+						link={"mailto:harryalbert364@gmail.com"}
+					/>
 				</h2>
 			</div>
 		</div>
