@@ -1,5 +1,5 @@
 // OffsetText.tsx
-import {JSX, createSignal} from "solid-js";
+import {JSX, createEffect, createSignal, onMount} from "solid-js";
 import MinorOffsetText from "./MinorOffsetText";
 
 interface Props {
@@ -10,8 +10,22 @@ interface Props {
 }
 
 export default function ExperienceTab(props: Props): JSX.Element {
+	let descriptionRef: HTMLDivElement | undefined = undefined;
 	const [mouseOver, setMouseOver] = createSignal<boolean>(false);
 	const [expanded, setExpanded] = createSignal<boolean>(false);
+	const [descriptionHeight, setDescriptionHeight] =
+		createSignal<string>("0px");
+
+	createEffect(() => {
+		const scrollHeight = descriptionRef?.scrollHeight;
+		setDescriptionHeight(expanded() ? `${scrollHeight}px` : "0px");
+		console.log(descriptionHeight());
+	});
+
+	onMount(() => {
+		const scrollHeight = descriptionRef?.scrollHeight;
+		setDescriptionHeight(expanded() ? `${scrollHeight}px` : "0px");
+	});
 
 	return (
 		<div
@@ -43,9 +57,9 @@ export default function ExperienceTab(props: Props): JSX.Element {
 				</div>
 			</div>
 			<div
-				class={`transition-all duration-200 ease-in overflow-hidden ${
-					expanded() ? "max-h-500px" : "max-h-0"
-				} text-sm`}
+				class={`transition-all duration-100 ease-in overflow-hidden text-sm`}
+				style={`max-height: ${descriptionHeight()}`}
+				ref={descriptionRef}
 			>
 				<h1>{props.jobDescription}</h1>
 			</div>
