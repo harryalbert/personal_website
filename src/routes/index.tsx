@@ -5,12 +5,11 @@ import OffsetButton from "~/components/OffsetButton";
 import OffsetText from "~/components/TitleOffsetText";
 
 export default function Home() {
-	const [windowWidth, setWindowWidth] = createSignal<number>(0);
+	const [windowWidth, setWindowWidth] = createSignal<number>(641);
 	const isMobile = () => windowWidth() <= 640;
 
 	const handleResize = () => {
-		setWindowWidth(window?.innerWidth ?? 0);
-		console.log(window.innerWidth);
+		setWindowWidth(window.innerWidth);
 	};
 	onMount(() => {
 		setWindowWidth(window.innerWidth);
@@ -32,9 +31,18 @@ export default function Home() {
 						link={"https://github.com/harryalbert/"}
 					/>
 				</div>
-				<h1 class="font-fatface text-4xl tracking-wide">
-					Hi <OffsetText text={"I'm Harry,"} /> <br />
-					Student & <OffsetText text={"Software Engineer"} />
+				<h1
+					class={`font-fatface ${
+						isMobile() ? "text-3xl" : "text-4xl"
+					} tracking-wide`}
+				>
+					Hi <OffsetText text={"I'm Harry,"} isMobile={isMobile()} />{" "}
+					<br />
+					Student &{" "}
+					<OffsetText
+						text={"Software Engineer"}
+						isMobile={isMobile()}
+					/>
 				</h1>
 
 				<h2 class="mt-10 w-3/5">
