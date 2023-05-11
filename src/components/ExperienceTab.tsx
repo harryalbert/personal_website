@@ -57,7 +57,9 @@ export default function ExperienceTab(props: Props): JSX.Element {
 				</div>
 			</div>
 			<div
-				class={`transition-all duration-100 ease-in overflow-hidden text-sm`}
+				class={`transition-all duration-100 ease-in overflow-hidden text-sm ${
+					expanded() && "mt-2"
+				}`}
 				style={`max-height: ${descriptionHeight()}`}
 				ref={descriptionRef}
 			>

@@ -1,4 +1,5 @@
 import {For, createSignal, onCleanup, onMount} from "solid-js";
+import ConciseExperienceTab from "~/components/ConciseExperienceTab";
 import ExperienceTab from "~/components/ExperienceTab";
 import LinkOffsetText from "~/components/LinkOffsetText";
 import MinorOffsetText from "~/components/MinorOffsetText";
@@ -11,14 +12,26 @@ const jobExperiences = [
 		jobTitle: "SWE Intern",
 		jobDates: "05/2022 - 8/2022",
 		jobDescription:
-			"Software Engineering Intern at Meta, specifically working on the web codebase. Work mainly involved React and GraphQl, as well as the use of many internal tools specific to Meta. During my internship, I created two full-scale projects, learned multiple new frameworks and programming languages, and wrote the second most lines of code in my entire team.",
+			"During my internship I created two full-scale projects, learned multiple new frameworks and programming languages, and wrote the second most lines of code in my entire team. I spent the majority of my time at Meta working on the web codebase. My work mainly involved React and GraphQl, as well as the use of many internal tools specific to Meta.",
 	},
 	{
 		jobName: "Cadence Effects",
 		jobTitle: "SWE Intern",
 		jobDates: "07/2020 - 8/2021",
 		jobDescription:
-			"Independently created production and file management tools under the direction of the Head of Production. Python tools integrated with existing workflow to streamline the production pipeline and improve file management efficiency. All tools were accompanied by highly intuitive GUIs.Python tools that interact with the company's web-based video storage tool (Shotgun) to automate video transferring tasks. All tools were accompanied by highly intuitive GUIs. Company intranet - created with node.js and python.",
+			"At Cadence I independently created many production and file management tools under the direction of the Head of Production. These tools, which I created using Python, integrated with existing workflow to streamline the production pipeline and improve file management efficiency. I also created a company intranet using node.js and python.",
+	},
+];
+const conciseJobExperiences = [
+	{
+		jobName: "Williams College",
+		jobTitle: "TA for CS 136, 371",
+		jobDates: "02/2022 - 05/2023",
+	},
+	{
+		jobName: "Plexus",
+		jobTitle: "Programming Consultant",
+		jobDates: "11/2021 - 02/2022",
 	},
 ];
 
@@ -111,6 +124,15 @@ export default function Home() {
 						jobTitle={job.jobTitle}
 						jobDates={job.jobDates}
 						jobDescription={job.jobDescription}
+					/>
+				)}
+			</For>
+			<For each={conciseJobExperiences}>
+				{(job) => (
+					<ConciseExperienceTab
+						jobName={job.jobName}
+						jobTitle={job.jobTitle}
+						jobDates={job.jobDates}
 					/>
 				)}
 			</For>
