@@ -1,13 +1,23 @@
+import {createSignal, onCleanup, onMount} from "solid-js";
 import LinkOffsetText from "~/components/LinkOffsetText";
 import MinorOffsetText from "~/components/MinorOffsetText";
 import OffsetButton from "~/components/OffsetButton";
 import OffsetText from "~/components/TitleOffsetText";
 
 export default function Home() {
-	var isMobile = false;
-	if (typeof window !== "undefined") {
-		isMobile = window.innerWidth <= 640;
-	}
+	const [windowWidth, setWindowWidth] = createSignal<number>(0);
+	const isMobile = () => windowWidth() <= 640;
+
+	const handleResize = () => {
+		setWindowWidth(window?.innerWidth ?? 0);
+		console.log(window.innerWidth);
+	};
+	onMount(() => {
+		setWindowWidth(window.innerWidth);
+
+		window.addEventListener("resize", handleResize);
+		onCleanup(() => window.removeEventListener("resize", handleResize));
+	});
 
 	return (
 		<div class="font-mulish text-black">
@@ -49,7 +59,7 @@ export default function Home() {
 
 			<div
 				class={`bg-white m-2 px-10 py-10 grid ${
-					isMobile ? "grid-cols-1" : "grid-cols-2"
+					isMobile() ? "grid-cols-1" : "grid-cols-2"
 				}`}
 			>
 				<h1 class="font-fatface text-3xl tracking-wide">
@@ -70,7 +80,7 @@ export default function Home() {
 
 			<div
 				class={`bg-indigo-50 m-2 px-10 py-10 grid ${
-					isMobile ? "grid-cols-1" : "grid-cols-2"
+					isMobile() ? "grid-cols-1" : "grid-cols-2"
 				}`}
 			>
 				<h1 class="font-fatface text-3xl tracking-wide">Contact Me</h1>
