@@ -1,8 +1,26 @@
-import {createSignal, onCleanup, onMount} from "solid-js";
+import {For, createSignal, onCleanup, onMount} from "solid-js";
+import ExperienceTab from "~/components/ExperienceTab";
 import LinkOffsetText from "~/components/LinkOffsetText";
 import MinorOffsetText from "~/components/MinorOffsetText";
 import OffsetButton from "~/components/OffsetButton";
 import OffsetText from "~/components/TitleOffsetText";
+
+const jobExperiences = [
+	{
+		jobName: "Meta",
+		jobTitle: "SWE Intern",
+		jobDates: "05/2022 - 8/2022",
+		jobDescription:
+			"Software Engineering Intern at Meta, specifically working on the web codebase. Work mainly involved React and GraphQl, as well as the use of many internal tools specific to Meta. During my internship, I created two full-scale projects, learned multiple new frameworks and programming languages, and wrote the second most lines of code in my entire team.",
+	},
+	{
+		jobName: "Cadence Effects",
+		jobTitle: "SWE Intern",
+		jobDates: "07/2020 - 8/2021",
+		jobDescription:
+			"Independently created production and file management tools under the direction of the Head of Production. Python tools integrated with existing workflow to streamline the production pipeline and improve file management efficiency. All tools were accompanied by highly intuitive GUIs.Python tools that interact with the company's web-based video storage tool (Shotgun) to automate video transferring tasks. All tools were accompanied by highly intuitive GUIs. Company intranet - created with node.js and python.",
+	},
+];
 
 export default function Home() {
 	const [windowWidth, setWindowWidth] = createSignal<number>(641);
@@ -85,6 +103,17 @@ export default function Home() {
 					721, Hardhat, Express.js, Firebase, MongoDB Atlas, AWS
 				</h2>
 			</div>
+
+			<For each={jobExperiences}>
+				{(job) => (
+					<ExperienceTab
+						jobName={job.jobName}
+						jobTitle={job.jobTitle}
+						jobDates={job.jobDates}
+						jobDescription={job.jobDescription}
+					/>
+				)}
+			</For>
 
 			<div
 				class={`bg-indigo-50 m-2 px-10 py-10 grid ${
