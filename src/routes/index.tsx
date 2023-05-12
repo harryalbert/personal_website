@@ -118,6 +118,9 @@ export default function Home() {
 			</div>
 
 			<div class="bg-indigo-50 m-2 p-1">
+				<h1 class="font-fatface text-[28px] tracking-wide mx-2">
+					Experience
+				</h1>
 				<For each={jobExperiences}>
 					{(job) => (
 						<ExperienceTab
