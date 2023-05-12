@@ -35,7 +35,12 @@ export default function ExperienceTab(props: Props): JSX.Element {
 			}`}
 			onMouseEnter={() => setMouseOver(true)}
 			onMouseLeave={() => setMouseOver(false)}
-			onClick={() => setExpanded(!expanded())}
+			onClick={() => {
+				if (expanded()) {
+					setMouseOver(false);
+				}
+				setExpanded(!expanded());
+			}}
 		>
 			<div class="flex">
 				<div
