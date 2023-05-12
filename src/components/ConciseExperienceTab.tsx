@@ -6,6 +6,7 @@ interface Props {
 	jobName: string;
 	jobTitle: string;
 	jobDates: string;
+	mobile?: boolean;
 }
 
 export default function ConciseExperienceTab(props: Props): JSX.Element {
@@ -19,7 +20,13 @@ export default function ConciseExperienceTab(props: Props): JSX.Element {
 			onMouseEnter={() => setMouseOver(true)}
 			onMouseLeave={() => setMouseOver(false)}
 		>
-			<div class="flex justify-between items-center">
+			<div
+				class={`flex ${
+					props.mobile
+						? "flex-col justify-start"
+						: "flex-row justify-between"
+				} items-center`}
+			>
 				<div class="flex justify-start flex-row">
 					<MinorOffsetText text={props.jobName} />
 					<h1>, {props.jobTitle}</h1>

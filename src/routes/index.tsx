@@ -25,7 +25,7 @@ const jobExperiences = [
 const conciseJobExperiences = [
 	{
 		jobName: "Williams College",
-		jobTitle: "TA for CS 136, 371",
+		jobTitle: "CS TA",
 		jobDates: "02/2022 - 05/2023",
 	},
 	{
@@ -128,6 +128,7 @@ export default function Home() {
 							jobTitle={job.jobTitle}
 							jobDates={job.jobDates}
 							jobDescription={job.jobDescription}
+							mobile={isMobile()}
 						/>
 					)}
 				</For>
@@ -137,6 +138,7 @@ export default function Home() {
 							jobName={job.jobName}
 							jobTitle={job.jobTitle}
 							jobDates={job.jobDates}
+							mobile={isMobile()}
 						/>
 					)}
 				</For>
