@@ -29,8 +29,8 @@ export default function ExperienceTab(props: Props): JSX.Element {
 
 	return (
 		<div
-			class={`font-mulish m-2 p-1 border-[1px] border-indigo-50 transition-all duration-100 ease-in cursor-pointer ${
-				(mouseOver() || expanded()) && "bg-indigo-50"
+			class={`font-mulish m-2 p-1 border-[1px] border-white transition-all duration-100 ease-in cursor-pointer ${
+				(mouseOver() || expanded()) && "bg-white"
 			}`}
 			onMouseEnter={() => setMouseOver(true)}
 			onMouseLeave={() => setMouseOver(false)}

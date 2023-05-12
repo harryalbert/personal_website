@@ -117,28 +117,30 @@ export default function Home() {
 				</h2>
 			</div>
 
-			<For each={jobExperiences}>
-				{(job) => (
-					<ExperienceTab
-						jobName={job.jobName}
-						jobTitle={job.jobTitle}
-						jobDates={job.jobDates}
-						jobDescription={job.jobDescription}
-					/>
-				)}
-			</For>
-			<For each={conciseJobExperiences}>
-				{(job) => (
-					<ConciseExperienceTab
-						jobName={job.jobName}
-						jobTitle={job.jobTitle}
-						jobDates={job.jobDates}
-					/>
-				)}
-			</For>
+			<div class="bg-indigo-50 m-2 p-1">
+				<For each={jobExperiences}>
+					{(job) => (
+						<ExperienceTab
+							jobName={job.jobName}
+							jobTitle={job.jobTitle}
+							jobDates={job.jobDates}
+							jobDescription={job.jobDescription}
+						/>
+					)}
+				</For>
+				<For each={conciseJobExperiences}>
+					{(job) => (
+						<ConciseExperienceTab
+							jobName={job.jobName}
+							jobTitle={job.jobTitle}
+							jobDates={job.jobDates}
+						/>
+					)}
+				</For>
+			</div>
 
 			<div
-				class={`bg-indigo-50 m-2 px-10 py-10 grid ${
+				class={`bg-white m-2 px-10 py-10 grid ${
 					isMobile() ? "grid-cols-1" : "grid-cols-2"
 				}`}
 			>
