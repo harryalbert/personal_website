@@ -79,8 +79,14 @@ export default function Home() {
 				<h2 class="mt-10 w-3/5">
 					I am a student at Williams College majoring in Computer
 					Science and Philosophy, and will be graduating in 2025. I am
-					also a Neo Scholar and a former intern at Meta. This summer
-					I will be interning at Bubble in NYC.
+					also a{" "}
+					<LinkOffsetText
+						text={"Neo Scholar"}
+						link={"https://neo.com/"}
+						smallMargin
+					/>{" "}
+					and a former intern at Meta. This summer I will be interning
+					at Bubble in NYC.
 				</h2>
 
 				<div class="my-10">
