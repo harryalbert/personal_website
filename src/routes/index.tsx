@@ -28,14 +28,21 @@ const jobExperiences = [
 		jobDescription:
 			"I have TAd for CS 136: Data Structures and Advanced Programming, and CS 371: Graphics. For these classes I helped explain complex programming topics to students and graded assignments.",
 	},
-];
-const conciseJobExperiences = [
 	{
 		jobName: "Plexus",
 		jobTitle: "Programming Consultant",
 		jobDates: "11/2021 - 02/2022",
+		jobDescription:
+			"I created a custom Chrome Extension for Plexus, and helped them plan their launch within the Williams College Community. I also created a set of design notes and critiques for their original website and helped create new design ideas from these critiques.",
 	},
 ];
+
+type conciseJobExperience = {
+	jobName: string;
+	jobTitle: string;
+	jobDates: string;
+};
+const conciseJobExperiences: Array<conciseJobExperience> = [];
 
 export default function Home() {
 	const [windowWidth, setWindowWidth] = createSignal<number>(641);
