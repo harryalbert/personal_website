@@ -12,7 +12,7 @@ const jobExperiences = [
 		jobTitle: "SWE Intern",
 		jobDates: "05/2022 - 8/2022",
 		jobDescription:
-			"During my internship I created two full-scale projects, learned multiple new frameworks and programming languages, and wrote the second most lines of code in my entire team. I spent the majority of my time at Meta working on the web codebase. My work mainly involved React and GraphQl, as well as the use of many internal tools specific to Meta.",
+			"At Meta I created two full-scale projects, learned multiple new frameworks and programming languages, and wrote the second most lines of code in my entire team. I spent the majority of my time at Meta working within the web codebase to create data visualizations. My work mainly involved React and GraphQl, as well as the use of many internal tools specific to Meta.",
 	},
 	{
 		jobName: "Cadence Effects",
@@ -21,13 +21,15 @@ const jobExperiences = [
 		jobDescription:
 			"At Cadence I independently created many production and file management tools under the direction of the Head of Production. These tools, which I created using Python, integrated with existing workflow to streamline the production pipeline and improve file management efficiency. I also created a company intranet using node.js and python.",
 	},
-];
-const conciseJobExperiences = [
 	{
 		jobName: "Williams College",
 		jobTitle: "CS TA",
 		jobDates: "02/2022 - 05/2023",
+		jobDescription:
+			"I have TAd for CS 136: Data Structures and Advanced Programming, and CS 371: Graphics. For these classes I helped explain complex programming topics to students and graded assignments.",
 	},
+];
+const conciseJobExperiences = [
 	{
 		jobName: "Plexus",
 		jobTitle: "Programming Consultant",
