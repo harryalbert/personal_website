@@ -20,7 +20,6 @@ export default function ExperienceTab(props: Props): JSX.Element {
 	createEffect(() => {
 		const scrollHeight = descriptionRef?.scrollHeight;
 		setDescriptionHeight(expanded() ? `${scrollHeight}px` : "0px");
-		console.log(descriptionHeight());
 	});
 
 	onMount(() => {
