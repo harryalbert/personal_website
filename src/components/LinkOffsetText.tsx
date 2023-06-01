@@ -22,8 +22,8 @@ export default function LinkOffsetText(props: Props): JSX.Element {
 						stroke-width="0"
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
-						height="1em"
-						width="1em"
+						height=".9em"
+						width=".9em"
 						style="overflow: visible;"
 						class="ml-1"
 					>
