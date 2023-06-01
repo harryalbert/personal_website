@@ -21,4 +21,5 @@
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	white-space: nowrap;
+	line-height: 1.3; /* adjust this value */
 }
