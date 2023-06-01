@@ -20,7 +20,7 @@ const jobExperiences = [
 		jobTitle: "SWE Intern",
 		jobDates: "07/2020 - 8/2021",
 		jobDescription:
-			"At Cadence, I used Python to independently create many production and file management tools under the direction of the Head of Production. These tools integrated with existing workflow to streamline the production pipeline and improve file management efficiency. I also created a company intranet using node.js and python.",
+			"At Cadence, I used Python to independently create many production and file management tools under the direction of the Head of Production. These tools integrated with existing workflow to streamline the production pipeline and improve file management efficiency. I also created a company intranet using node.js and python. Cadence has worked on shows and movies such as Game Of Thrones, Stranger Things, and The Whale.",
 		jobLink: "https://cadence-effects.com/",
 	},
 	{

@@ -49,19 +49,18 @@ export default function ExperienceTab(props: Props): JSX.Element {
 						props.mobile ? "flex-col justify-start" : "flex-row"
 					} justify-between items-center`}
 				>
-					<div
-						class="flex justify-start flex-row"
-						onClick={(event) => event.stopPropagation()}
-					>
-						{props.jobLink ? (
-							<LinkOffsetText
-								text={props.jobName}
-								link={props.jobLink}
-								noMargin
-							/>
-						) : (
-							<MinorOffsetText text={props.jobName} />
-						)}
+					<div class="flex justify-start flex-row">
+						<div onClick={(event) => event.stopPropagation()}>
+							{props.jobLink ? (
+								<LinkOffsetText
+									text={props.jobName}
+									link={props.jobLink}
+									noMargin
+								/>
+							) : (
+								<MinorOffsetText text={props.jobName} />
+							)}
+						</div>
 						<h1>, {props.jobTitle}</h1>
 					</div>
 					<div class="flex flex-row items-center">
