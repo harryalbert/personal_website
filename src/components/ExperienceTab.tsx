@@ -1,12 +1,14 @@
 // OffsetText.tsx
 import {JSX, createEffect, createSignal, onMount} from "solid-js";
 import MinorOffsetText from "./MinorOffsetText";
+import LinkOffsetText from "./LinkOffsetText";
 
 interface Props {
 	jobName: string;
 	jobTitle: string;
 	jobDates: string;
 	jobDescription: string;
+	jobLink?: string;
 	mobile?: boolean;
 }
 
@@ -47,8 +49,19 @@ export default function ExperienceTab(props: Props): JSX.Element {
 						props.mobile ? "flex-col justify-start" : "flex-row"
 					} justify-between items-center`}
 				>
-					<div class="flex justify-start flex-row">
-						<MinorOffsetText text={props.jobName} />
+					<div
+						class="flex justify-start flex-row"
+						onClick={(event) => event.stopPropagation()}
+					>
+						{props.jobLink ? (
+							<LinkOffsetText
+								text={props.jobName}
+								link={props.jobLink}
+								noMargin
+							/>
+						) : (
+							<MinorOffsetText text={props.jobName} />
+						)}
 						<h1>, {props.jobTitle}</h1>
 					</div>
 					<div class="flex flex-row items-center">

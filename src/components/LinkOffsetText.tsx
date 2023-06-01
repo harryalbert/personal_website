@@ -5,13 +5,14 @@ interface Props {
 	text: string;
 	link: string;
 	smallMargin?: boolean;
+	noMargin?: boolean;
 }
 
 export default function LinkOffsetText(props: Props): JSX.Element {
 	return (
 		<span
 			class={`relative inline-block ${
-				props.smallMargin ? "m-1" : "mr-5"
+				props.noMargin ? "m-0" : props.smallMargin ? "m-1" : "mr-5"
 			}`}
 		>
 			<a href={props.link} target="_blank">

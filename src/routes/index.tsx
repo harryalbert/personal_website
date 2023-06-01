@@ -13,6 +13,7 @@ const jobExperiences = [
 		jobDates: "05/2022 - 8/2022",
 		jobDescription:
 			"At Meta, I created two full-scale projects, learned multiple new frameworks and programming languages, and contributed the second most lines of code in my entire team. My work at Meta mainly involved working within the web codebase to create data visualizations using React and GraphQl.",
+		jobLink: "https://about.meta.com/",
 	},
 	{
 		jobName: "Cadence Effects",
@@ -20,6 +21,7 @@ const jobExperiences = [
 		jobDates: "07/2020 - 8/2021",
 		jobDescription:
 			"At Cadence, I used Python to independently create many production and file management tools under the direction of the Head of Production. These tools integrated with existing workflow to streamline the production pipeline and improve file management efficiency. I also created a company intranet using node.js and python.",
+		jobLink: "https://cadence-effects.com/",
 	},
 	{
 		jobName: "Williams College",
@@ -34,6 +36,7 @@ const jobExperiences = [
 		jobDates: "11/2021 - 02/2022",
 		jobDescription:
 			"I created a custom Chrome Extension for Plexus, and helped them plan their launch within the Williams College community. I also created a set of design notes and critiques for their original website and helped create new design ideas from these critiques. Plexus raised a $1.2m pre-seed backed by a set of investors, including Betaworks, Outlander, and Forum.",
+		jobLink: "https://plexus.earth/",
 	},
 ];
 
@@ -154,6 +157,7 @@ export default function Home() {
 							jobTitle={job.jobTitle}
 							jobDates={job.jobDates}
 							jobDescription={job.jobDescription}
+							jobLink={job.jobLink ?? undefined}
 							mobile={isMobile()}
 						/>
 					)}
