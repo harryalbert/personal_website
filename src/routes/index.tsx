@@ -131,7 +131,7 @@ export default function Home() {
 				}`}
 			>
 				<h1 class="font-fatface text-3xl tracking-wide">
-					Languages & Technologies
+					Languages, Technologies & Interests
 				</h1>
 
 				<h2 class="text-sm">
@@ -143,6 +143,12 @@ export default function Home() {
 					<MinorOffsetText text={"Technologies: "} /> React, SolidJS,
 					Next.js, Tailwind, GraphQL, ChatGPT API, Relay, Web3, ERC
 					721, Hardhat, Express.js, Firebase, MongoDB Atlas, AWS
+					<br />
+					<br />
+					<MinorOffsetText text={"Interests: "} /> Web Development,
+					LLMs, Web3, Smart Contract Tech, Full Stack Development,
+					Data Visualization, Computer Graphics, UI/UX Design, and
+					more!
 				</h2>
 			</div>
 
