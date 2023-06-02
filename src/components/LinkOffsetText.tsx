@@ -1,5 +1,5 @@
 // OffsetText.tsx
-import {JSX} from "solid-js";
+import {JSX, createSignal} from "solid-js";
 
 interface Props {
 	text: string;
@@ -9,14 +9,25 @@ interface Props {
 }
 
 export default function LinkOffsetText(props: Props): JSX.Element {
+	const [hovered, setHovered] = createSignal<boolean>(false);
+
 	return (
 		<span
 			class={`relative inline-block ${
 				props.noMargin ? "m-0" : props.smallMargin ? "m-1" : "mr-5"
 			}`}
 		>
-			<a href={props.link} target="_blank">
-				<h1 class="flex flex-row items-center relative z-20 font-mulish text-base tracking-wide">
+			<a
+				href={props.link}
+				target="_blank"
+				onMouseEnter={() => setHovered(true)}
+				onMouseLeave={() => setHovered(false)}
+			>
+				<h1
+					class={`transition-all duration-100 ease-in flex flex-row items-center relative z-20 font-mulish text-base tracking-wide ${
+						hovered() && "text-blue-700"
+					}`}
+				>
 					{props.text}
 					<svg
 						fill="currentColor"
