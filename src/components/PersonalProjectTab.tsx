@@ -4,16 +4,16 @@ import MinorOffsetText from "./MinorOffsetText";
 import LinkOffsetText from "./LinkOffsetText";
 
 interface Props {
-	jobName: string;
-	jobTitle: string;
-	jobDates: string;
-	jobDescription: string;
-	jobLink?: string;
+	projectName: string;
+	projectDescription: string;
+	projectLink?: string;
+	projectImage: string;
 	mobile?: boolean;
 }
 
-export default function ExperienceTab(props: Props): JSX.Element {
+export default function PersonalProjectsTab(props: Props): JSX.Element {
 	let descriptionRef: HTMLDivElement | undefined = undefined;
+	let imageRef: HTMLImageElement | undefined = undefined;
 	const [mouseOver, setMouseOver] = createSignal<boolean>(false);
 	const [expanded, setExpanded] = createSignal<boolean>(false);
 	const [descriptionHeight, setDescriptionHeight] =
@@ -31,8 +31,8 @@ export default function ExperienceTab(props: Props): JSX.Element {
 
 	return (
 		<div
-			class={`font-mulish m-2 p-1 border-[1px] border-white transition-all duration-100 ease-in cursor-pointer ${
-				(mouseOver() || expanded()) && "bg-white"
+			class={`font-mulish m-2 p-1 border-[1px] border-indigo-50 transition-all duration-100 ease-in cursor-pointer ${
+				(mouseOver() || expanded()) && "bg-indigo-50"
 			}`}
 			onMouseEnter={() => setMouseOver(true)}
 			onMouseLeave={() => setMouseOver(false)}
@@ -44,27 +44,17 @@ export default function ExperienceTab(props: Props): JSX.Element {
 			}}
 		>
 			<div class="flex">
-				<div
-					class={`flex flex-grow ${
-						props.mobile ? "flex-col justify-start" : "flex-row"
-					} justify-between items-center`}
-				>
-					<div class="flex justify-start flex-row">
-						<div onClick={(event) => event.stopPropagation()}>
-							{props.jobLink ? (
-								<LinkOffsetText
-									text={props.jobName}
-									link={props.jobLink}
-									noMargin
-								/>
-							) : (
-								<MinorOffsetText text={props.jobName} />
-							)}
-						</div>
-						<h1>, {props.jobTitle}</h1>
-					</div>
-					<div class="flex flex-row items-center">
-						<h1 class="mr-1">{props.jobDates}</h1>
+				<div class="flex flex-grow justify-start">
+					<div onClick={(event) => event.stopPropagation()}>
+						{props.projectLink ? (
+							<LinkOffsetText
+								text={props.projectName}
+								link={props.projectLink}
+								noMargin
+							/>
+						) : (
+							<MinorOffsetText text={props.projectName} />
+						)}
 					</div>
 				</div>
 				<div class="flex flex-shrink-0 items-center">
@@ -82,13 +72,34 @@ export default function ExperienceTab(props: Props): JSX.Element {
 				</div>
 			</div>
 			<div
-				class={`transition-all duration-100 ease-in overflow-hidden text-base ${
-					!props.mobile && "w-[90%]"
-				} ${expanded() && "mt-2"}`}
-				style={`max-height: ${descriptionHeight()}`}
+				class={`${
+					props.mobile
+						? "flex flex-col justify-center"
+						: "grid grid-cols-2"
+				} transition-all duration-200 ease-in overflow-hidden text-base w-full ${
+					expanded() && "mt-2"
+				}`}
+				style={`max-height: ${
+					descriptionHeight() == "0px" ? "0px" : "1000px"
+				}`}
 				ref={descriptionRef}
 			>
-				<h1>{props.jobDescription}</h1>
+				<h1
+					class={
+						!props.mobile
+							? "flex flex-col justify-center items-start text-left"
+							: ""
+					}
+				>
+					{props.projectDescription}
+				</h1>
+				<div class="w-full flex justify-center items-center mt-2">
+					<img
+						src={props.projectImage}
+						class={`w-full`}
+						alt={`image of ${props.projectName}`}
+					></img>
+				</div>
 			</div>
 		</div>
 	);
