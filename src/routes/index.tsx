@@ -64,13 +64,14 @@ export default function Home() {
 						link={"https://about.meta.com/"}
 						smallMargin
 					/>{" "}
-					(Summer 2022). This summer I will be interning at{" "}
+					(Summer 2022) and{" "}
 					<LinkOffsetText
 						text={"Bubble"}
 						link={"https://bubble.io/"}
 						smallMargin
 					/>{" "}
-					and based in NYC
+					(Summer 2023). This Summer I will be returning to Bubble for
+					another internship.
 				</h2>
 
 				<div class="my-10">
