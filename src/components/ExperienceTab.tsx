@@ -1,5 +1,5 @@
 // OffsetText.tsx
-import {JSX, createEffect, createSignal, onMount} from "solid-js";
+import {JSX, Show, createEffect, createSignal, onMount} from "solid-js";
 import MinorOffsetText from "./MinorOffsetText";
 import LinkOffsetText from "./LinkOffsetText";
 
@@ -13,7 +13,7 @@ interface Props {
 }
 
 export default function ExperienceTab(props: Props): JSX.Element {
-	let descriptionRef: HTMLDivElement | undefined = undefined;
+	let descriptionRef: HTMLDivElement | undefined;
 	const [mouseOver, setMouseOver] = createSignal<boolean>(false);
 	const [expanded, setExpanded] = createSignal<boolean>(false);
 	const [descriptionHeight, setDescriptionHeight] =
@@ -88,7 +88,14 @@ export default function ExperienceTab(props: Props): JSX.Element {
 				style={`max-height: ${descriptionHeight()}`}
 				ref={descriptionRef}
 			>
-				<h1>{props.jobDescription}</h1>
+				{props.jobDescription.split("\n").map((line, index) => (
+					<>
+						<Show when={index != 0}>
+							<br />
+						</Show>
+						<h1>{line}</h1>
+					</>
+				))}
 			</div>
 		</div>
 	);

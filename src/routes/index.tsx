@@ -30,10 +30,6 @@ export default function Home() {
 						text={"linkedin"}
 						link={"https://www.linkedin.com/in/harry-albert/"}
 					/>
-					<LinkOffsetText
-						text={"github"}
-						link={"https://github.com/harryalbert/"}
-					/>
 				</div>
 				<h1
 					class={`font-fatface ${
@@ -70,19 +66,14 @@ export default function Home() {
 						link={"https://bubble.io/"}
 						smallMargin
 					/>{" "}
-					(Summer 2023). This Summer I will be returning to Bubble for
-					another internship.
+					(Summer 2023). This Summer I have returned to Bubble for a
+					second internship.
 				</h2>
 
 				<div class="my-10">
 					<OffsetButton
-						text={"View My Resume"}
-						onClick={() =>
-							window.open(
-								"https://docs.google.com/document/d/15fBfxPwQn3QLyHhpzfUlZ3BqqN9IacEPcBfZqfHSUe0/edit?usp=sharing",
-								"_blank"
-							)
-						}
+						text={"Download My Resume"}
+						onClick={() => window.open("/resume.pdf", "_blank")}
 					/>
 				</div>
 			</div>
@@ -97,20 +88,20 @@ export default function Home() {
 				</h1>
 
 				<h2 class="text-sm">
-					<MinorOffsetText text={"Languages: "} /> Javascript,
-					Typescript, HTML + CSS, Solidity, Python, C, Java, Hack/PHP,
-					Assembly
+					<MinorOffsetText text={"Languages: "} />
+					Javascript/Typescript/Node.js, Python, HTML/CSS, Java, C,
+					F#, Solidity, Assembly
 					<br />
 					<br />
 					<MinorOffsetText text={"Technologies: "} /> React, SolidJS,
-					Next.js, Tailwind, GraphQL, ChatGPT API, Relay, Web3, ERC
-					721, Hardhat, Express.js, Firebase, MongoDB Atlas, AWS
+					React Native, Next.js, Express.js, Tailwind, Scikit-Learn,
+					PyTorch, Firebase, MongoDB Atlas, AWS
 					<br />
 					<br />
 					<MinorOffsetText text={"Interests: "} /> Web Development,
-					LLMs, Web3, Smart Contract Tech, Full Stack Development,
-					Data Visualization, Computer Graphics, UI/UX Design, and
-					more!
+					Mobile Development, LLMs, Web3, Smart Contract Tech, Full
+					Stack Development, Data Visualization, Computer Graphics,
+					UI/UX Design, and more!
 				</h2>
 			</div>
 
@@ -142,7 +133,7 @@ export default function Home() {
 							projectName={project.projectName}
 							projectDescription={project.projectDescription}
 							projectLink={project.projectLink ?? undefined}
-							projectImage={project.projectImage}
+							projectImage={project.projectImage ?? undefined}
 							mobile={isMobile()}
 						/>
 					)}
@@ -157,7 +148,7 @@ export default function Home() {
 				<h1 class="font-fatface text-3xl tracking-wide">Contact Me</h1>
 
 				<h2 class="text-sm">
-					If you would like to reach out to me my number is
+					If you want to reach out my number is
 					<LinkOffsetText
 						smallMargin
 						text={"(413)770-6129"}
@@ -169,8 +160,8 @@ export default function Home() {
 						text={"harryalbert364@gmail.com"}
 						link={"mailto:harryalbert364@gmail.com"}
 					/>
-					. I am always open to talking about interesting projects and
-					ideas.
+					. I'm always down to talking about interesting projects and
+					ideas!
 				</h2>
 			</div>
 		</div>

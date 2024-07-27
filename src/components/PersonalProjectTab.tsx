@@ -1,5 +1,5 @@
 // OffsetText.tsx
-import {JSX, createEffect, createSignal, onMount} from "solid-js";
+import {JSX, Show, createEffect, createSignal, onMount} from "solid-js";
 import MinorOffsetText from "./MinorOffsetText";
 import LinkOffsetText from "./LinkOffsetText";
 
@@ -7,13 +7,12 @@ interface Props {
 	projectName: string;
 	projectDescription: string;
 	projectLink?: string;
-	projectImage: string;
+	projectImage?: string;
 	mobile?: boolean;
 }
 
 export default function PersonalProjectsTab(props: Props): JSX.Element {
-	let descriptionRef: HTMLDivElement | undefined = undefined;
-	let imageRef: HTMLImageElement | undefined = undefined;
+	let descriptionRef: HTMLDivElement | undefined;
 	const [mouseOver, setMouseOver] = createSignal<boolean>(false);
 	const [expanded, setExpanded] = createSignal<boolean>(false);
 	const [descriptionHeight, setDescriptionHeight] =
@@ -73,7 +72,7 @@ export default function PersonalProjectsTab(props: Props): JSX.Element {
 			</div>
 			<div
 				class={`${
-					props.mobile
+					props.mobile || !props.projectImage
 						? "flex flex-col justify-center"
 						: "grid grid-cols-2"
 				} transition-all duration-200 ease-in overflow-hidden text-base w-full ${
@@ -93,13 +92,15 @@ export default function PersonalProjectsTab(props: Props): JSX.Element {
 				>
 					{props.projectDescription}
 				</h1>
-				<div class="w-full flex justify-center items-center mt-2">
-					<img
-						src={props.projectImage}
-						class={`w-full`}
-						alt={`image of ${props.projectName}`}
-					></img>
-				</div>
+				<Show when={props.projectImage}>
+					<div class="w-full flex justify-center items-center mt-2">
+						<img
+							src={props.projectImage}
+							class={`w-full`}
+							alt={`image of ${props.projectName}`}
+						></img>
+					</div>
+				</Show>
 			</div>
 		</div>
 	);

@@ -10,9 +10,9 @@ const JobExperiences: JobExperiencesType = [
 	{
 		jobName: "Bubble",
 		jobTitle: "Software Engineer, Intern",
-		jobDates: "Summer 2023",
+		jobDates: "Summer 2023 & 2024",
 		jobDescription:
-			"Bubble is a no-code web development platform. I worked on the Growth Team, and acted as a full time engineer on the team by completing sprint tickets and contributing to AGILE ceremonies. At Bubble, I ideated and executed a project to refresh new hire onboarding, used by all new hires at Bubble, and created a universal set of standards for writing and maintaining documentation. I also contributed to multiple successful experiments, including improving the editor UI and user journey.",
+			"Bubble is a no-code web development platform. For my first summer at Bubble I worked on the Growth Team, acting as a full time engineer by completing sprint tickets and contributing to AGILE ceremonies. During my internship I ideated and executed a project to refresh new hire onboarding, used by all new hires at Bubble, and created a universal set of standards for writing and maintaining documentation. I also contributed to multiple successful experiments, including improving the editor UI and user journey. \n For my second summer at Bubble I worked on the Mobile Team. During my internship, I led the planning, shaping, and execution of a substantial three-month project using SolidJS and React Native. I also quickly formed cross-team relationships with design, product, and engineering peers to ensure smooth coordination and timely releases of new features.",
 		jobLink: "https://bubble.io/",
 	},
 	{
@@ -34,7 +34,7 @@ const JobExperiences: JobExperiencesType = [
 	{
 		jobName: "Williams College",
 		jobTitle: "CS TA",
-		jobDates: "February 2022 – Present",
+		jobDates: "February 2022 – May 2024",
 		jobDescription:
 			"I have TA'ed for CS 136: Data Structures and Advanced Programming, and CS 371: Graphics. For these classes I helped explain complex programming topics to students and graded assignments.",
 	},
